@@ -1,4 +1,4 @@
-update=5/14/2017 9:31:38 AM
+update=5/15/2017 3:51:34 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -58,4 +58,6 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=libraries/STP16C596
+LibName30=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/74HCT595D_118
+LibName31=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/connector
+LibName32=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/ULN2004A
