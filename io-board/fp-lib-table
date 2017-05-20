@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name custom)(type KiCad)(uri /Users/ambrosechua/Developer/projects/autoforce/electronics/libraries/custom.pretty)(options "")(descr ""))
+)
