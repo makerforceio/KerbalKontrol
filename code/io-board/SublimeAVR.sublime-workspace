@@ -11,7 +11,7 @@
 			"file": "main.c",
 			"settings":
 			{
-				"buffer_size": 108,
+				"buffer_size": 358,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -20,16 +20,8 @@
 			"file": "SublimeAVR.sublime-project",
 			"settings":
 			{
-				"buffer_size": 77163,
+				"buffer_size": 67847,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Makefile",
-			"settings":
-			{
-				"buffer_size": 1416,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -162,10 +154,12 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/solderneer/Projects/KerbalKontrol/code/io-board"
+		"/Users/solderneer/Documents/Projects/KerbalKontrol/code/io-board"
 	],
 	"file_history":
 	[
+		"/usr/local/CrossPack-AVR-20131216/avr/include/avr/iom328p.h",
+		"/Users/solderneer/Documents/Projects/KerbalKontrol/code/io-board/Makefile",
 		"/Users/solderneer/Projects/test-avr/main.c",
 		"/Users/solderneer/Library/Application Support/Sublime Text 3/Packages/AVR/SublimeAVR.sublime-settings",
 		"/Users/solderneer/Desktop/hopetechnik/Low_Level_Controller_Testing/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c",
@@ -201,7 +195,7 @@
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -244,15 +238,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 108,
+						"buffer_size": 358,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								61,
-								61
+								210,
+								210
 							]
 						],
 						"settings":
@@ -272,56 +266,28 @@
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 77163,
+						"buffer_size": 67847,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								142,
+								142
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
+							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (Sublime).sublime-syntax",
+							"tab_size": 6,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 29336.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1416,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 230.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -384,12 +350,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Documents/Projects/test/stm32-test.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{

@@ -4,15 +4,30 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
+
+int extraTime = 0;
 
 int main(void)
 {
   DDRC = 0xFF; //Nakes PORTC as Output
-  while(1) //infinite loop
-  {
-    PORTC = 0xFF; //Turns ON All LEDs
-    _delay_ms(1000); //1 second delay
-    PORTC= 0x00; //Turns OFF All LEDs
-    _delay_ms(1000); //1 second delay
-  }
+
+  TCCR0A = (1 << COM0A1) | (1 << WGM01);
+  TCCR0B = (1 << CS02) | (1 << CS00);
+
+  TIMSK0 = (1 << OCIE0A);
+  sei();
+
+  while(1);
+}
+
+ISR(TIMER0_COMPA_vect)
+{
+    extraTime++;
+
+    if (extraTime > 100)
+    {
+        PORTC ^= 0xFF;
+        extraTime = 0;
+    }
 }
