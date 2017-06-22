@@ -23,11 +23,16 @@ int main(void)
 
 ISR(TIMER0_COMPA_vect)
 {
-    extraTime++;
+  extraTime++;
 
-    if (extraTime > 100)
-    {
-        PORTC ^= 0xFF;
-        extraTime = 0;
-    }
+  if (extraTime > 100)
+  {
+    PORTC ^= 0xFF;
+    extraTime = 0;
+  }
+}
+
+void SUD_GPIO_Init(void)
+{
+  
 }
