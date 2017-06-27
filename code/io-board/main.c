@@ -34,5 +34,14 @@ ISR(TIMER0_COMPA_vect)
 
 void SUD_GPIO_Init(void)
 {
-  
+  /* Enable port directions PORTA */
+  DDRA = 0xFF;
+  DDRB = 0xFF;
+  DDRC = 0xFF;
+  DDRD = 0xFF;
+
+  /* Set pin PB1 and PB0 to high */
+  PORTB = (1 << PORTB1);
+  PORTB = (1 << PORTB0);
+
 }

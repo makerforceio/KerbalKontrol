@@ -3,6 +3,10 @@
 	{
 		"selected_items":
 		[
+			[
+				"PO",
+				"PORTB0\tPORTB0"
+			]
 		]
 	},
 	"buffers":
@@ -11,8 +15,7 @@
 			"file": "main.c",
 			"settings":
 			{
-				"buffer_size": 460,
-				"encoding": "UTF-8",
+				"buffer_size": 675,
 				"line_ending": "Windows"
 			}
 		}
@@ -154,8 +157,8 @@
 	],
 	"file_history":
 	[
-		"/Users/solderneer/Documents/Projects/KerbalKontrol/code/io-board/Makefile",
 		"/Users/solderneer/Documents/Projects/KerbalKontrol/code/io-board/main.c",
+		"/Users/solderneer/Documents/Projects/KerbalKontrol/code/io-board/Makefile",
 		"/usr/local/CrossPack-AVR-20131216/avr/include/avr/interrupt.h",
 		"/usr/local/CrossPack-AVR-20131216/avr/include/avr/iom328p.h",
 		"/Users/solderneer/Projects/test-avr/main.c",
@@ -236,15 +239,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 460,
+						"buffer_size": 675,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								364,
-								364
+								0,
+								0
 							]
 						],
 						"settings":
