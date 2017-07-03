@@ -28,3 +28,8 @@ void SPI_DeInit(void)
 {
 
 }
+
+ISR(SPI_STC_vect)
+{
+    
+}
