@@ -17,11 +17,13 @@ void IO_Init(volatile uint8_t *PORTx, volatile uint8_t *DDRx, IO_InitStruct *IO_
 
 void IO_Write(volatile uint8_t *PORTx, uint8_t PINx, PinState_t pinState)
 {
-
-
+    if(pinState == SET)
+        *PORTx |= PINx;
+    else if(pinState == RESET)
+        *PORTx &= ~(PINx);
 }
 
-PinState_t IO_Read(volatile uint8_t *PORTx, uint8_t PINx)
+PinState_t IO_Read(volatile uint8_t *PORTx, uint8_t PINx) //Pinwise only (no multiple pins)
 {
     return SET;
 }
