@@ -16,6 +16,7 @@
 			"settings":
 			{
 				"buffer_size": 675,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -157,6 +158,8 @@
 	],
 	"file_history":
 	[
+		"/Users/solderneer/Desktop/try1.c",
+		"/Users/solderneer/Documents/Projects/KerbalKontrol/code/io-board/SublimeAVR.sublime-project",
 		"/Users/solderneer/Documents/Projects/KerbalKontrol/code/io-board/main.c",
 		"/Users/solderneer/Documents/Projects/KerbalKontrol/code/io-board/Makefile",
 		"/usr/local/CrossPack-AVR-20131216/avr/include/avr/interrupt.h",
@@ -246,8 +249,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								332,
+								332
 							]
 						],
 						"settings":
@@ -306,6 +309,10 @@
 	{
 		"height": 0.0
 	},
+	"output.unsaved_changes":
+	{
+		"height": 114.0
+	},
 	"pinned_build_system": "",
 	"project": "SublimeAVR.sublime-project",
 	"replace":
@@ -330,7 +337,7 @@
 		[
 			[
 				"",
-				"~/Documents/Projects/solderneer.github.io/homepage.sublime-project"
+				"~/Documents/Projects/todo-cli/todocli.sublime-project"
 			]
 		],
 		"width": 380.0
