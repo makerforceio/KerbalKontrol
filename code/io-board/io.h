@@ -1,3 +1,6 @@
+#ifndef IOCUSTOM_H
+#define IOCUSTOM_H
+
 #include <avr/io.h>
 #include "settings.h"
 
@@ -20,6 +23,8 @@ void IO_Set(volatile uint8_t *PORTx, uint8_t PINx);
 void IO_Clear(volatile uint8_t *PORTx, uint8_t PINx);
 void IO_SetDir(volatile uint8_t *DDRx, uint8_t PINx, Otype_t outputType);
 void IO_Init(volatile uint8_t *PORTx, volatile uint8_t *DDRx, IO_InitStruct *IO_Init);
+
+#endif /* IOCUSTOM_H */
 
 
 
