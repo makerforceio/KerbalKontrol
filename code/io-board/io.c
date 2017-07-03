@@ -41,17 +41,24 @@ void IO_Toggle(volatile uint8_t *PORTx, uint8_t PINx) //No error checking for wh
     *PORTx ^= PINx;
 }
 
-void IO_Set(volatile uint8_t *PORTx, uint8_t PINx)
+void IO_Set(volatile uint8_t *PORTx, uint8_t PINx) //No error checking for whether it is an ouput
 {
     *PORTx |= PINx;
 }
 
-void IO_Clear(volatile uint8_t *PORTx, uint8_t PINx)
+void IO_Clear(volatile uint8_t *PORTx, uint8_t PINx) //No error checking for whether it is an output
 {
     *PORTx &= ~(PINx);
 }
 
-void IO_SetDir(volatile uint8_t *PORTx, uint8_t PINx)
+void IO_SetDir(volatile uint8_t *DDRx, uint8_t PINx, Otype_t outputType)
 {
-
+    if(outputType == INPUT)
+    {
+        *DDRx &= ~(PINx);
+    }
+    else if(outputType == OUPUT)
+    {
+        *DDRx |= PINx;
+    }
 }
