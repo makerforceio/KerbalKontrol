@@ -15,7 +15,7 @@ void IO_Init(volatile uint8_t *PORTx, volatile uint8_t *DDRx, IO_InitStruct *IO_
         *DDRx |= IO_Init->PinSet;
 }
 
-void IO_Write(volatile uint8_t *PORTx, uint8_t PINx, PinState_t pinState)
+void IO_Write(volatile uint8_t *PORTx, uint8_t PINx, PinState_t pinState) //No error checking for whether it is an ouput
 {
     if(pinState == SET)
         *PORTx |= PINx;
@@ -36,19 +36,19 @@ uint8_t IO_Read(volatile uint8_t *PORTx, uint8_t PINx) //Pinwise only (no multip
         return 2; //Add some error return or debug function here
 }
 
-void IO_Toggle(volatile uint8_t *PORTx, uint8_t PINx)
+void IO_Toggle(volatile uint8_t *PORTx, uint8_t PINx) //No error checking for whether it is an output
 {
-
+    *PORTx ^= PINx;
 }
 
 void IO_Set(volatile uint8_t *PORTx, uint8_t PINx)
 {
-
+    *PORTx |= PINx;
 }
 
 void IO_Clear(volatile uint8_t *PORTx, uint8_t PINx)
 {
-
+    *PORTx &= ~(PINx);
 }
 
 void IO_SetDir(volatile uint8_t *PORTx, uint8_t PINx)
