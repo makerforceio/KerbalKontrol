@@ -1,4 +1,4 @@
-update=Sat 27 May 2017 02:23:55 PM SGT
+update=2017 July 03, Monday 21:11:29
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,8 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -62,3 +60,5 @@ LibName30=valves
 LibName31=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/74HCT595D_118
 LibName32=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/connector
 LibName33=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/ULN2004A
+[general]
+version=1
