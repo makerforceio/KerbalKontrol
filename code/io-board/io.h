@@ -6,7 +6,7 @@
 
 typedef enum{RESET = 0, SET = 1} PinState_t;
 typedef enum{INPUT = 0, OUPUT =1} Otype_t;
-typedef enum{Pullup_Disable = 0, Pullup_Enable = 1} PuPd_t;
+typedef enum{DISABLE = 0, ENABLE = 1} PuPd_t;
 
 typedef struct 
 {

@@ -6,7 +6,7 @@ void IO_Init(volatile uint8_t *PORTx, volatile uint8_t *DDRx, IO_InitStruct *IO_
     {
         *DDRx &= ~(IO_Init->PinSet);
 
-        if(IO_Init->PullupSet == Pullup_Enable)
+        if(IO_Init->PullupSet == ENABLE)
             *PORTx |= IO_Init->PinSet;
         else
             *PORTx &= ~(IO_Init->PinSet);
