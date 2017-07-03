@@ -14,7 +14,7 @@ typedef struct
 } IO_InitStruct;
 
 void IO_Write(volatile uint8_t *PORTx, uint8_t PINx, PinState_t);
-PinState_t IO_Read(volatile uint8_t *PORTx, uint8_t PINx);
+uint8_t IO_Read(volatile uint8_t *PORTx, uint8_t PINx);
 void IO_Toggle(volatile uint8_t *PORTx, uint8_t PINx);
 void IO_Set(volatile uint8_t *PORTx, uint8_t PINx);
 void IO_Clear(volatile uint8_t *PORTx, uint8_t PINx);

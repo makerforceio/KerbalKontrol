@@ -23,9 +23,17 @@ void IO_Write(volatile uint8_t *PORTx, uint8_t PINx, PinState_t pinState)
         *PORTx &= ~(PINx);
 }
 
-PinState_t IO_Read(volatile uint8_t *PORTx, uint8_t PINx) //Pinwise only (no multiple pins)
+uint8_t IO_Read(volatile uint8_t *PORTx, uint8_t PINx) //Pinwise only (no multiple pins)
 {
-    return SET;
+    if (PINx != 0 && (PINx & (PINx-1)) == 0) //no multiple bits set
+    {
+        if((*PORTx & PINx) == 0)
+            return RESET;
+        else
+            return SET;
+    }
+    else
+        return 2; //Add some error return or debug function here
 }
 
 void IO_Toggle(volatile uint8_t *PORTx, uint8_t PINx)
