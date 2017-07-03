@@ -19,20 +19,24 @@ void SPI_WriteByte(uint8_t buffer) //Polling implementation for now
 
 void SPI_ReadByte(uint8_t *buffer)
 {
+    //wait until reception occurs
+    while(!(SPSR & (1 << SPIF)));
 
+    *buffer = SPDR;
 }
 
 void SPI_ioctl(void)
 {
-
+    //no general io functions yet
 }
 
 void SPI_DeInit(void)
 {
-
+    //Set all the bits back to zero and deactivate the peripheral
+    SPCR &= ~((1 << SPE) | (1 << MSTR) | (1 << SPR0));
 }
 
-ISR(SPI_STC_vect)
-{
+// ISR(SPI_STC_vect)
+// {
 
-}
+// }
