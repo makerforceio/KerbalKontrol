@@ -17,6 +17,8 @@
 #define pin6 (1 << 6)
 #define pin7 (1 << 7)
 
+#define LATCHPIN (1 << 5)
+
 typedef enum{port0 = 0, port1 = 1, port2 = 2, port3 = 3} port_t;
 
 
@@ -25,7 +27,4 @@ void Shift_Write(port_t portx, uint8_t pinx, PinState_t pinState);
 void Shift_Set(port_t portx, uint8_t pinx);
 void Shift_Clear(port_t portx, uint8_t pinx);
 void Shift_Toggle(port_t portx, uint8_t pinx);
-
-void ShiftOutByte(uint8_t *buffer);
-void ShiftOutBytes(uint32_t *buffer);
 
