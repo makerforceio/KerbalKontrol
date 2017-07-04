@@ -1,3 +1,6 @@
+#ifndef SHIFT_H
+#define SHIFT_H
+
 #include "io.h"
 #include "spi.h"
 
@@ -6,7 +9,6 @@
  * (2) Shift out the data over SPI (one byte)
  * (3) Set latch pin LOW
  */
-
 
 #define pin0 (1 << 0)
 #define pin1 (1 << 1)
@@ -27,4 +29,6 @@ void Shift_Write(port_t portx, uint8_t pinx, PinState_t pinState);
 void Shift_Set(port_t portx, uint8_t pinx);
 void Shift_Clear(port_t portx, uint8_t pinx);
 void Shift_Toggle(port_t portx, uint8_t pinx);
+
+#endif /* SHIFT_H */
 

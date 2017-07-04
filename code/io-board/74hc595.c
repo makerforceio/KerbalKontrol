@@ -1,6 +1,9 @@
 #include "74hc595.h"
 
+//Global variables
 uint8_t pin_buffer[4] = {0x00, 0x00, 0x00, 0x00};
+
+//Private function prototypes
 void ShiftOut(void);
 
 void Shift_Init(void)

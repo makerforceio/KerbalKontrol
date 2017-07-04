@@ -33,7 +33,7 @@ uint8_t IO_Read(volatile uint8_t *PORTx, uint8_t PINx) //Pinwise only (no multip
             return SET;
     }
     else
-        return 2; //Add some error return or debug function here
+        return -1; //Add some error return or debug function here
 }
 
 void IO_Toggle(volatile uint8_t *PORTx, uint8_t PINx) //No error checking for whether it is an output
