@@ -21,8 +21,12 @@ void Switches_Scan(uint16_t *buffer)
         Shift_Clear(port3, (1 << i));
         for(j = 0; j < 4; j++)
         {
-            *buffer = (*buffer << 1)
-            *buffer |= (uint16_t)IO_Read(&PORTC, (1 << j));
+            *buffer = (*buffer << 1);
+
+            if(IO_Read(&PORTC, (1 << j)) == SET)
+                *buffer |= (1 << j);
+            else
+                *buffer &= ~(1 << j);
         }
     }
 }
