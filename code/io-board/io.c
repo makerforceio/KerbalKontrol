@@ -57,7 +57,7 @@ void IO_SetDir(volatile uint8_t *DDRx, uint8_t PINx, Otype_t outputType)
     {
         *DDRx &= ~(PINx);
     }
-    else if(outputType == OUPUT)
+    else if(outputType == OUTPUT)
     {
         *DDRx |= PINx;
     }

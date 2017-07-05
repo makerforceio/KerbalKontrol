@@ -12,7 +12,7 @@ void Shift_Init(void)
 
     IO_InitStruct IO_InitStructure;
     IO_InitStructure.PinSet = LATCHPIN;
-    IO_InitStructure.OutputSet = OUPUT;
+    IO_InitStructure.OutputSet = OUTPUT;
     
     IO_Init(&PORTC, &DDRC, &IO_InitStructure);
     IO_Set(&PORTC, LATCHPIN);
