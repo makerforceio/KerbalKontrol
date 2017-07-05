@@ -53,7 +53,7 @@ void ShiftOut(void) //Polling implementation because SPI haven't done interrupts
     int i;
     IO_Clear(&PORTC, LATCHPIN);
 
-    for(i = 0; i < 4; i++)
+    for(i = 3; i >= 0; i--)
         SPI_WriteByte(pin_buffer[i]);
 
     IO_Set(&PORTC, LATCHPIN);

@@ -8,7 +8,7 @@ OBJDUMP :=$(CROSS)objdump
 
 TARGET=build/io-board
 MMCU?=
-AVRDUDE_FLAGS?=
+AVRDUDE_FLAGS?=-c usbasp -p m328p
 
 SOURCES=$(wildcard *.cpp) $(wildcard *.c)
 INCLUDES=
@@ -60,7 +60,7 @@ $(TARGET).lst: $(TARGET).elf
 	$(OBJDUMP) -h -S $< > $@
 
 avrdude:
-	avrdude $(AVRDUDE_FLAGS) -e -m flash -i $(TARGET).hex
+	avrdude $(AVRDUDE_FLAGS) -U flash:w:$(TARGET).hex
 
 clean:
 	rm -rf build
