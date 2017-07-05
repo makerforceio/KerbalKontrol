@@ -21,7 +21,7 @@
 
 #define LATCHPIN (1 << 5)
 
-typedef enum{port0 = 0, port1 = 1, port2 = 2, port3 = 3} port_t;
+typedef enum{port0 = 3, port1 = 2, port2 = 1, port3 = 0} port_t;
 
 
 void Shift_Init(void);

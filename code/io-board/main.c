@@ -10,5 +10,9 @@
 
 int main(void)
 {
-  
+  Switches_Init(); //Init all the required peripherals
+  Shift_Set(port0, (pin0 | pin1 | pin2 | pin3));
+  Shift_Set(port1, (pin0 | pin1 | pin2 | pin3));
+  Shift_Set(port2, (pin0 | pin1 | pin2 | pin3));
+  Shift_Set(port3, (pin0 | pin1 | pin2 | pin3));
 }
