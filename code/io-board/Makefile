@@ -6,9 +6,10 @@ SIZE    :=$(CROSS)size
 OBJCOPY :=$(CROSS)objcopy
 OBJDUMP :=$(CROSS)objdump
 
-TARGET=build/io-board
+BUILD_DIR=build/
+TARGET=$(BUILD_DIR)io-board
 MMCU?=
-AVRDUDE_FLAGS?=-c usbasp -p m328p
+AVRDUDE_FLAGS?=-c usbasp -p m328p -U flash:w:
 
 SOURCES=$(wildcard *.cpp) $(wildcard *.c)
 INCLUDES=
@@ -32,6 +33,7 @@ CXXFLAGS+=-include "$(SETTINGS)"
 
 LDFLAGS=-mmcu=$(MMCU) -Wl,--gc-sections -Wl,-Map=$(TARGET).map,--cref
 
+
 .PHONY: all avrdude clean prebuild build
 	
 all: prebuild build
@@ -42,7 +44,7 @@ prebuild:
 build: $(TARGET).hex $(TARGET).lst
 
 $(TARGET).elf: $(OBJECTS)
-	$(LD) $(LDFLAGS) $(addprefix build/,$^) -lm -o $@
+	$(LD) $(LDFLAGS) $(addprefix $(BUILD_DIR),$^) -lm -o $@
 
 $(TARGET).hex: $(TARGET).elf
 	$(OBJCOPY) -O ihex -R .eeprom -R .fuse -R .lock -R .signature $< $@
@@ -54,13 +56,13 @@ $(TARGET).bin: $(TARGET).elf
 	$(CXX) -o $@ $(CXXFLAGS) -MMD -MP -MF $(@:%.o=%.d) $< -c
 
 %.o: %.c
-	$(CC) -o build/$@ $(CFLAGS) -MMD -MP -MF build/$(@:%.o=%.d) $< -c
+	$(CC) -o $(BUILD_DIR)$@ $(CFLAGS) -MMD -MP -MF $(BUILD_DIR)$(@:%.o=%.d) $< -c
 
 $(TARGET).lst: $(TARGET).elf
 	$(OBJDUMP) -h -S $< > $@
 
 avrdude:
-	avrdude $(AVRDUDE_FLAGS) -U flash:w:$(TARGET).hex
+	avrdude $(AVRDUDE_FLAGS)$(TARGET).hex
 
 clean:
 	rm -rf build
