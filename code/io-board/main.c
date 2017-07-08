@@ -4,7 +4,6 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-
 #include "74hc595.h"
 #include "switches.h"
 
