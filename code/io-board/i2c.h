@@ -3,7 +3,6 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include <avr/interrupt.h>
 
 void I2C_Init(void);
 void I2C_WriteByte(uint8_t buffer);
