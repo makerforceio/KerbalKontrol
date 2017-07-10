@@ -20,20 +20,20 @@ int main(void)
   Shift_Set(port2, (pin0 | pin1 | pin2 | pin3));
   Shift_Set(port3, (pin0 | pin1 | pin2 | pin3));
 
-  Switches_Init();
-  I2C_Init();
+  // Switches_Init();
+  // I2C_Init();
 
-  while(1)
-  {
-    while(TWCR & (1 << TWINT)); //Wait until the TWI receives something
+  // while(1)
+  // {
+  //   while(TWCR & (1 << TWINT)); //Wait until the TWI receives something
 
-    switch(TWSR & ~(0x06)) //Mask bit rate settings
-    {
-      case 0x60:
-        receiveData = 
-      default:
-        //Do nothing
-    }
-    //Inifinite loop
-  }
+  //   switch(TWSR & ~(0x06)) //Mask bit rate settings
+  //   {
+  //     case 0x60:
+  //       receiveData = 
+  //     default:
+  //       //Do nothing
+  //   }
+  //   //Inifinite loop
+  // }
 }
