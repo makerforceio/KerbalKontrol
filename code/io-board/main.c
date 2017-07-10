@@ -11,6 +11,9 @@
 
 int main(void)
 {
+  uint8_t receiveData = 0;
+  uint8_t targetAddress = 0;
+
   Switches_Init(); //Init all the required peripherals
   Shift_Set(port0, (pin0 | pin1 | pin2 | pin3));
   Shift_Set(port1, (pin0 | pin1 | pin2 | pin3));
@@ -27,6 +30,9 @@ int main(void)
     switch(TWSR & ~(0x06)) //Mask bit rate settings
     {
       case 0x60:
+        receiveData = 
+      default:
+        //Do nothing
     }
     //Inifinite loop
   }
