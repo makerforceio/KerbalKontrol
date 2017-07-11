@@ -19,8 +19,8 @@
 #define pin6 (1 << 6)
 #define pin7 (1 << 7)
 
-#define LATCHPIN (1 << 5)
-#define OE (1 << 6)
+#define LATCHPIN (1 << 6)
+#define OE (1 << 5)
 
 typedef enum{port0 = 3, port1 = 2, port2 = 1, port3 = 0} port_t;
 

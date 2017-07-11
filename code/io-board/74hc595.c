@@ -11,11 +11,12 @@ void Shift_Init(void)
     SPI_Init();
 
     IO_InitStruct IO_InitStructure;
-    IO_InitStructure.PinSet = LATCHPIN;
+    IO_InitStructure.PinSet = LATCHPIN | OE;
     IO_InitStructure.OutputSet = OUTPUT;
     
-    IO_Init(&PORTC, &DDRC, &IO_InitStructure);
-    IO_Set(&PORTC, LATCHPIN);
+    IO_Init(&PORTD, &DDRD, &IO_InitStructure);
+    IO_Set(&PORTD, LATCHPIN); //
+    IO_Clear(&PORTD, OE); //Enable output
 
     ShiftOut(); //Set all pins to default state
 }
