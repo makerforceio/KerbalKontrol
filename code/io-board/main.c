@@ -11,8 +11,8 @@
 
 int main(void)
 {
-  uint8_t receiveData = 0;
-  uint8_t targetAddress = 0;
+  // uint8_t receiveData = 0;
+  // uint8_t targetAddress = 0;
 
   Switches_Init(); //Init all the required peripherals
   Shift_Set(port0, (pin0 | pin1 | pin2 | pin3));

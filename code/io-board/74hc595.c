@@ -16,7 +16,7 @@ void Shift_Init(void)
     
     IO_Init(&PORTD, &DDRD, &IO_InitStructure);
     IO_Set(&PORTD, LATCHPIN); //
-    IO_Clear(&PORTD, OE); //Enable output
+    IO_Clear(&PORTD, OE); //Enable output 
 
     ShiftOut(); //Set all pins to default state
 }
