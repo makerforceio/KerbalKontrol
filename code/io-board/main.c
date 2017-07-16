@@ -12,13 +12,8 @@
 int main(void)
 {
   Switches_Init();
-
-  while(1)
-  {
-    Shift_Set(port0, 0xFF);
-    Shift_Set(port1, 0xFF);
-    Shift_Set(port2, 0xFF);
-    Shift_Set(port3, 0xFF);
-    _delay_ms(2000);
-  }
+  Shift_Set(port0, 0xFF);
+  Shift_Set(port1, 0xFF);
+  Shift_Set(port2, 0xFF);
+  Shift_Set(port3, 0xFF);
 }

@@ -4,6 +4,8 @@
 #include "io.h"
 #include "spi.h"
 
+#include <util/delay.h>
+
 /* Process goes like this
  * (1) Set latch pin LOW
  * (2) Shift out the data over SPI (one byte)

@@ -54,11 +54,13 @@ void Shift_Toggle(port_t portx, uint8_t pinx)
 void ShiftOut(void) //Polling implementation because SPI haven't done interrupts yet
 {
     int i;
-    IO_Clear(&PORTC, LATCHPIN);
+    IO_Clear(&PORTD, LATCHPIN);
 
     for(i = 0; i < 4; i++)
         SPI_WriteByte(pin_buffer[i]);
 
-    IO_Set(&PORTC, LATCHPIN);
+    _delay_ms(2000);
+
+    IO_Set(&PORTD, LATCHPIN);
 
 }
