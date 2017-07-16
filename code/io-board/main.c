@@ -12,16 +12,26 @@
 int main(void)
 {
 
-  IO_InitStruct IO_InitStructure;
-
-  IO_InitStructure.PinSet = (1 << 0);
-  IO_InitStructure.OutputSet = OUTPUT;
-
-  IO_Init(&PORTC, &DDRC, &IO_InitStructure);
-
+  //DDRC = 0xFF;
+  IO_SetDir(&DDRC, (1 << PORTC0), OUTPUT);
   while(1)
   {
     IO_Toggle(&PORTC, (1 << PORTC0));
     _delay_ms(2000);
   }
+
+  // IO_InitStruct IO_InitStructure;
+
+  // IO_InitStructure.PinSet = (1 << 0);
+  // IO_InitStructure.OutputSet = OUTPUT;
+
+  // IO_Init(&PORTC, &DDRC, &IO_InitStructure);
+
+  // IO_Set(&PORTC, (1 << PORTC0));
+
+  // while(1)
+  // {
+  //   IO_Toggle(&PORTC, (1 << PORTC0));
+  //   _delay_ms(2000);
+  // }
 }
