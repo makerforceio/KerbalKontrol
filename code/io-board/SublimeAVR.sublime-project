@@ -1756,13 +1756,6 @@
           "make"
     ], 
     "variants": [
-          {
-              "name": "Rebuild", 
-              "cmd": [
-                  "make", 
-                  "re"
-            ]
-        }, 
         {
               "name": "Clean", 
               "cmd": [

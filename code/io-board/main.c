@@ -11,29 +11,17 @@
 
 int main(void)
 {
-  uint8_t receiveData = 0;
-  uint8_t targetAddress = 0;
 
-  Switches_Init(); //Init all the required peripherals
-  Shift_Set(port0, (pin0 | pin1 | pin2 | pin3));
-  Shift_Set(port1, (pin0 | pin1 | pin2 | pin3));
-  Shift_Set(port2, (pin0 | pin1 | pin2 | pin3));
-  Shift_Set(port3, (pin0 | pin1 | pin2 | pin3));
+  IO_InitStruct IO_InitStructure;
 
-  Switches_Init();
-  I2C_Init();
+  IO_InitStructure.PinSet = (1 << 0);
+  IO_InitStructure.OutputSet = OUTPUT;
+
+  IO_Init(&PORTC, &DDRC, &IO_InitStructure);
 
   while(1)
   {
-    while(TWCR & (1 << TWINT)); //Wait until the TWI receives something
-
-    switch(TWSR & ~(0x06)) //Mask bit rate settings
-    {
-      case 0x60:
-        receiveData = 
-      default:
-        //Do nothing
-    }
-    //Inifinite loop
+    IO_Toggle(&PORTC, (1 << PORTC0));
+    _delay_ms(2000);
   }
 }
