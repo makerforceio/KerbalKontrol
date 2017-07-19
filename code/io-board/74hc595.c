@@ -17,7 +17,7 @@ void Shift_Init(void)
     // IO_Init(&PORTD, &DDRD, &IO_InitStructure);
 
     DDRD |= (LATCHPIN | OE); //Set both of them to output
-    IO_Set(&PORTD, LATCHPIN); //
+    IO_Clear(&PORTD, LATCHPIN); //
     IO_Clear(&PORTD, OE); //Enable output 
 
     ShiftOut(); //Set all pins to default state
@@ -54,13 +54,13 @@ void Shift_Toggle(port_t portx, uint8_t pinx)
 void ShiftOut(void) //Polling implementation because SPI haven't done interrupts yet
 {
     int i;
-    IO_Clear(&PORTD, LATCHPIN);
 
     for(i = 0; i < 4; i++)
         SPI_WriteByte(pin_buffer[i]);
 
-    _delay_ms(2000);
-
+    _delay_ms(100);
     IO_Set(&PORTD, LATCHPIN);
+    _delay_ms(500);
+    IO_Clear(&PORTD, LATCHPIN);
 
 }
