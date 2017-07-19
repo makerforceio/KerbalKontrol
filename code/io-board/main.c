@@ -11,9 +11,14 @@
 
 int main(void)
 {
-  Switches_Init();
-  Shift_Set(port0, 0xFF);
-  Shift_Set(port1, 0xFF);
-  Shift_Set(port2, 0xFF);
-  Shift_Set(port3, 0xFF);
+  DDRD |= (LATCHPIN | OE); //Set both of them to output
+  DDRB |= (CLOCK | DATA);
+  IO_Set(&PORTD, (LATCHPIN | OE));
+  IO_Set(&PORTB, (CLOCK | DATA)); 
+  // _delay_ms(2000);
+  // Shift_Init();
+  // Shift_Set(port0, 0xFF);
+  // Shift_Set(port1, 0xFF);
+  // Shift_Set(port2, 0xFF);
+  // Shift_Set(port3, 0xFF);
 }

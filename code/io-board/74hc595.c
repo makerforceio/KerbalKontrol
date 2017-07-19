@@ -8,17 +8,11 @@ void ShiftOut(void);
 
 void Shift_Init(void)
 {
-    SPI_Init();
-
-    // IO_InitStruct IO_InitStructure;
-    // IO_InitStructure.PinSet = LATCHPIN | OE;
-    // IO_InitStructure.OutputSet = OUTPUT;
-    
-    // IO_Init(&PORTD, &DDRD, &IO_InitStructure);
 
     DDRD |= (LATCHPIN | OE); //Set both of them to output
-    IO_Clear(&PORTD, LATCHPIN); //
-    IO_Clear(&PORTD, OE); //Enable output 
+    DDRB |= (CLOCK | DATA);
+    IO_Clear(&PORTD, (LATCHPIN | OE));
+    IO_Clear(&PORTB, (CLOCK | DATA)); 
 
     ShiftOut(); //Set all pins to default state
 }
@@ -53,14 +47,22 @@ void Shift_Toggle(port_t portx, uint8_t pinx)
 
 void ShiftOut(void) //Polling implementation because SPI haven't done interrupts yet
 {
-    int i;
+    int i = 0;
+    int cnt = 0;
 
-    for(i = 0; i < 4; i++)
-        SPI_WriteByte(pin_buffer[i]);
+    for(cnt = 0; cnt < 4; cnt++)
+    {
+        for(i = 7; i >= 0; i--)
+        {
+            IO_Clear(&PORTB, CLOCK);
 
-    _delay_ms(100);
-    IO_Set(&PORTD, LATCHPIN);
-    _delay_ms(500);
-    IO_Clear(&PORTD, LATCHPIN);
+            if (pin_buffer[cnt] & (1<<i)) 
+                IO_Set(&PORTB, DATA);
+            else 
+                IO_Clear(&PORTB, DATA);
 
+            IO_Set(&PORTB, CLOCK);
+            IO_Clear(&PORTB, DATA);
+        }
+    }
 }

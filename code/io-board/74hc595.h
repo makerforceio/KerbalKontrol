@@ -2,7 +2,6 @@
 #define SHIFT_H
 
 #include "io.h"
-#include "spi.h"
 
 #include <util/delay.h>
 
@@ -23,6 +22,8 @@
 
 #define LATCHPIN (1 << 6)
 #define OE (1 << 5)
+#define CLOCK (1 << 5)
+#define DATA (1 << 3)
 
 typedef enum{port0 = 3, port1 = 2, port2 = 1, port3 = 0} port_t;
 
