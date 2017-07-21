@@ -1,13 +1,19 @@
-#ifndef I2C_H_
-#define I2C_H_
+#ifndef I2C_SLAVE_H
+#define I2C_SLAVE_H
 
-#include <avr/io.h>
-#include <util/delay.h>
+#include <avr/interrupt.h>
+#include <stdint.h>
+#include <util/twi.h>
 
-void I2C_Init(void);
-void I2C_WriteByte(uint8_t buffer);
-void I2C_ReadByte(uint8_t *buffer);
-void I2C_ioctl(void);
-void I2C_DeInit(void);
+void I2C_init(uint8_t address);
+void I2C_stop(void);
+void I2C_setCallbacks(void (*recv)(uint8_t), void (*req)());
 
-#endif /* I2C_H_ */
+inline void __attribute__((always_inline)) I2C_transmitByte(uint8_t data)
+{
+  TWDR = data;
+}
+
+ISR(TWI_vect);
+
+#endif /* I2C_SLAVE_H */

@@ -4,21 +4,37 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-
 #include "74hc595.h"
 #include "switches.h"
 #include "i2c.h"
 
-int main(void)
+#define I2C_ADDR 0x10
+
+volatile uint8_t data;
+
+void I2C_received(uint8_t received_data)
 {
-  DDRD |= (LATCHPIN | OE); //Set both of them to output
-  DDRB |= (CLOCK | DATA);
-  IO_Set(&PORTD, (LATCHPIN | OE));
-  IO_Set(&PORTB, (CLOCK | DATA)); 
-  // _delay_ms(2000);
-  // Shift_Init();
-  // Shift_Set(port0, 0xFF);
-  // Shift_Set(port1, 0xFF);
-  // Shift_Set(port2, 0xFF);
-  // Shift_Set(port3, 0xFF);
+  data = received_data;
+}
+
+void I2C_requested()
+{
+  I2C_transmitByte(data);
+}
+
+void setup()
+{
+  // set received/requested callbacks
+  I2C_setCallbacks(I2C_received, I2C_requested);
+
+  // init I2C
+  I2C_init(I2C_ADDR);
+}
+
+int main()
+{
+  setup();
+
+  // Main program loop
+  while(1);
 }
