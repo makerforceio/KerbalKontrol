@@ -2,14 +2,10 @@
 
 void Switches_Init(void)
 {
-    IO_InitStruct IO_InitStructure;
-    IO_InitStructure.OutputSet = INPUT;
-    IO_InitStructure.PinSet = INPUT0 | INPUT1 | INPUT2 | INPUT3;
-    IO_InitStructure.PullupSet = ENABLE;
+    DDRC &= ~(INPUT0 | INPUT1 | INPUT2 | INPUT3);
+    PORTC |= (INPUT0 | INPUT1 | INPUT2 | INPUT3);
 
-    IO_Init(&PORTC, &DDRC, &IO_InitStructure);
     Shift_Init();
-
     Shift_Set(port3, (OUTPUT0 | OUTPUT1 | OUTPUT2 | OUTPUT3));
 }
 

@@ -25,7 +25,7 @@
 #define CLOCK (1 << 5)
 #define DATA (1 << 3)
 
-typedef enum{port0 = 3, port1 = 2, port2 = 1, port3 = 0} port_t;
+typedef enum{port0 = 3, port1 = 2, port2 = 1, port3 = 0, portnone = 4} port_t;
 
 
 void Shift_Init(void);
