@@ -14,12 +14,12 @@ volatile uint8_t data;
 
 void I2C_received(uint8_t received_data)
 {
-  data = received_data;
+  data = received_data; // Populate the receive callback
 }
 
 void I2C_requested()
 {
-  I2C_transmitByte(data);
+  I2C_transmitByte(data); //Populate the transmit callback
 }
 
 void setup()
