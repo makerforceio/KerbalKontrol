@@ -633,9 +633,9 @@ F 8 "FTDI" H 6300 1800 50  0001 L CNN "MF"
 	1    6300 1800
 	1    0    0    -1  
 $EndComp
-Text GLabel 6900 1200 2    60   Input ~ 0
-RX1
 Text GLabel 6900 1100 2    60   Input ~ 0
+RX1
+Text GLabel 6900 1200 2    60   Input ~ 0
 TX1
 $Comp
 L GND #PWR038
