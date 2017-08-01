@@ -1,4 +1,4 @@
-update=5/16/2017 9:13:09 AM
+update=2017 August 02, Wednesday 07:23:36
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=../../kerbalkontrol-pcb
+LibDir=../libraries
 [eeschema/libraries]
 LibName1=main-board-rescue
 LibName2=power
@@ -59,4 +59,3 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-LibName31=C:/Users/s_sud/Desktop/git-repos/kerbalkontrol-pcb/libraries/FT232RL

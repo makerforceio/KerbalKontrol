@@ -1,4 +1,4 @@
-update=2017 July 03, Monday 21:11:29
+update=2017 August 02, Wednesday 07:24:08
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,9 +23,11 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
-LibDir=
+LibDir=../libraries
 [eeschema/libraries]
 LibName1=io-board-rescue
 LibName2=power
@@ -57,8 +59,3 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-LibName31=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/74HCT595D_118
-LibName32=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/connector
-LibName33=D:/Sudharshan/Projects/kerbalkontrol-pcb/libraries/ULN2004A
-[general]
-version=1
