@@ -8,7 +8,7 @@ OBJDUMP :=$(CROSS)objdump
 
 BUILD_DIR=build/
 TARGET=$(BUILD_DIR)io-board
-MMCU?=
+MMCU?=atmega328
 AVRDUDE_FLAGS?=-c usbasp -p m328p -U flash:w:
 
 SOURCES=$(wildcard *.cpp) $(wildcard *.c)
